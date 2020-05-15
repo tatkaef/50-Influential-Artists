@@ -213,8 +213,8 @@ console.log(artists[2].bio);
 
 
 
-/* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and 
-console.log() to check your work. */
+/* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this 
+issue and console.log() to check your work. */
 console.log();
 console.log("Task 2:");
 artists[8].name = "Vincent Van Gogh";
@@ -232,7 +232,7 @@ console.log(artists[8].name);
 console.log();
 console.log("Task 3:");
 function getArtistByIndex(id, name) {
-    /* code here */
+    
     console.log("The artist at index ",artists[id].id, "is ",artists[id].name);
   }
   getArtistByIndex(2);
@@ -250,7 +250,7 @@ function getArtistByIndex(id, name) {
 console.log();
 console.log("Task 4:");
 function removeArtist(id, name) {
-       /* code here */
+     
      let artistsDel=artists.slice(id,1);
     console.log(artistsDel);
   }
@@ -258,29 +258,42 @@ function removeArtist(id, name) {
   /**
 
 
-/* Task 5: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1800-1900) */
+/* Task 5: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th 
+century (1800-1900) */
 
-function get20s(/* Code here */){
-
-    /* Code here */
-
-  }
-
-/* Task 6: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 console.log();
 console.log("Task 5:");
+let bornArr =[];
+function get20s(/* Code here */){
+  for(let i=0; i<artists.length; i++){  
+    if (artists[i].years.substr(0,2) ==='18'){
+        bornArr.push(artists[i].name);
+    }
+  };
+  return (bornArr);  
+
+  }
+console.log(get20s());
+
+
+/* Task 6: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more 
+than 100 paintings */
+
+console.log();
+console.log("Task 6:");
 function lotsOfArt(){
   let more100 = [];
-for (let i=0; i<artists.length; i++){
-/* Code here */
+  for (let i=0; i<artists.length; i++){
       if (artists.paintings >100){
-        more100=more100+artists[i].name;
+        more100.push(artists[i].name);
       }
-    }
-    console.log(more100);
   }
+    console.log(more100);    
+}
+lotsOfArt();
 
-/* Task 7: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
+/* Task 7: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st 
+artist to the array (you) with custom information! 👩‍🎨👨‍🎨
 
 id: 21
 name: Your Name Here, 
@@ -289,21 +302,30 @@ genre: Web Design,
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
 
-function addArtist(/* Code here */){
-
-    /* Code here */
-
+console.log();
+console.log("Task 71:");
+function addArtist(artist21){
+ artists.push(artist21);
+ console.log(artists[artists.length-1]); 
   }
-
+addArtist({id: 21,
+  name: "Tanya Efimiva", 
+  years: "19XX - current day",
+  genre: "Web Design", 
+  nationality: "Russian",
+  bio: "Tanya worked as teacher of math and compuper sience, also she was Sysadmin, programmer on Delphi and Admin DB"
+});
 
 /* Task 8: Create a function called `checkArtist` that accepts a string (name of an artist) and checks if that artist is in the dataset. */
 
-function checkArtist(/* Code here */){
-
-    /* Code here */
-
+function checkArtist(checkName){
+for(let i=0; i<artists.length; i++){
+  if (checkName === artists[i].name){
+    console.log(checkName,'is in the dataset');
   }
-
+ }
+}
+checkArtist('El Greco');
 
 
 

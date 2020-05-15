@@ -2,50 +2,90 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 84%;
+    width: 70%;
     height: 70vh;
     padding: 0 0 1vh 0;
-    border-bottom: 3px solid gray;
-    // margin: 0 0 2em 0; 
+    border-bottom: 1px solid gray;
+   
     .inside-title{
         width: 80%;
         height: 60vh;
-        background: @bg-img;
+        background: @bg-img ;
+        opacity: 0.8;
         background-size: 100% auto;
         background-repeat: no-repeat;
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
-        h1{
-            display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1{           
             color: white;
             font-size: 4em;
             border: 20px;
         } //close h
+        button{
+            .buttons(10em, 3em);
+            @media(max-width:500px){
+                .buttons(7em, 1.7em);
+            }          
+        } //button
+    @media(max-width: 500px){
+        width: 100%;
+        height: 30vh;
+        h1{
+            font-size: 2em;
+        }
+    }
 
     } // close inside-title
 
-    // button{
-    //     // display: flex;
-    //     // justify-content: center;
-    // }
+    @media(max-width: 500px){        
+        width: 100%;
+        height: 40vh;
+        padding: 0;
+    }
+
 } //close title-container
 
 
 .artists-container{
     width: 60%;
     display: flex;
-    margin: 10px 0 0 0; 
+    justify-content: space-between;
+    margin: 3em 0 0 0; 
 
     .artist{
-        width: 50%;
+        width: 48%;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;                
+        img{           
+            height: 30vh;
+            border-radius: 5px;  
+        }
+        a{
+            text-decoration: none;
+            size: 4em;
+            color: grey;
+            margin: 1em;
+        }
+        .bio{
+            width: 90%;
+        }
+    } //close artist
+    @media(max-width: 500px){
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      .artist{
+        width: 70%;
+        margin: 1em 0;
+        img{
+            height: 15vh;
+        }
+      }
+    }
 
-    }
-    img{
-        // width: 40%;
-        height: 300px;
-    }
 
 } //close artists-container

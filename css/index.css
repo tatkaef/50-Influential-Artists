@@ -106,7 +106,7 @@ h5 {
 }
 header {
   display: flex;
-  margin: 3em 0 1.5em 0;
+  margin: 3em 0 0.5em 0;
 }
 header nav {
   display: flex;
@@ -118,41 +118,111 @@ header nav a {
   text-decoration: none;
   padding: 0 0.1em;
 }
+@media (max-width: 500px) {
+  header nav a {
+    font-size: 1em;
+    padding: 0;
+  }
+}
+header nav a:hover {
+  color: #4d4343;
+}
 .title-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 84%;
+  width: 70%;
   height: 70vh;
   padding: 0 0 1vh 0;
-  border-bottom: 3px solid gray;
+  border-bottom: 1px solid gray;
 }
 .title-container .inside-title {
   width: 80%;
   height: 60vh;
   background: url("../assets/home.png");
+  opacity: 0.8;
   background-size: 100% auto;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 .title-container .inside-title h1 {
-  display: flex;
   color: white;
   font-size: 4em;
   border: 20px;
 }
+.title-container .inside-title button {
+  width: 10em;
+  height: 3em;
+  box-shadow: grey solid 1em;
+  border-radius: 5px;
+}
+@media (max-width: 500px) {
+  .title-container .inside-title button {
+    width: 7em;
+    height: 1.7em;
+    box-shadow: grey solid 1em;
+    border-radius: 5px;
+  }
+}
+@media (max-width: 500px) {
+  .title-container .inside-title {
+    width: 100%;
+    height: 30vh;
+  }
+  .title-container .inside-title h1 {
+    font-size: 2em;
+  }
+}
+@media (max-width: 500px) {
+  .title-container {
+    width: 100%;
+    height: 40vh;
+    padding: 0;
+  }
+}
 .artists-container {
   width: 60%;
   display: flex;
-  margin: 10px 0 0 0;
+  justify-content: space-between;
+  margin: 3em 0 0 0;
 }
 .artists-container .artist {
-  width: 50%;
+  width: 48%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
-.artists-container img {
-  height: 300px;
+.artists-container .artist img {
+  height: 30vh;
+  border-radius: 5px;
+}
+.artists-container .artist a {
+  text-decoration: none;
+  size: 4em;
+  color: grey;
+  margin: 1em;
+}
+.artists-container .artist .bio {
+  width: 90%;
+}
+@media (max-width: 500px) {
+  .artists-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .artists-container .artist {
+    width: 70%;
+    margin: 1em 0;
+  }
+  .artists-container .artist img {
+    height: 15vh;
+  }
+}
+.cta {
+  height: 30vh;
 }
